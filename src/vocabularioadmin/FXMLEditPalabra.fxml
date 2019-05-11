@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+
+<GridPane 
+    xmlns:fx="http://javafx.com/fxml"
+    alignment="center" 
+    hgap="20"
+    fx:id="palabraGrid" 
+    vgap="10"
+    styleClass="root">
+    
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="15.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="35.0" prefWidth="100.0" />
+    </columnConstraints>
+    
+    <padding>
+        <Insets top="50" right="50" bottom="50" left="50"/>
+    </padding>
+    
+    <ImageView 
+        id="boxImage"
+        GridPane.columnIndex="0" 
+        GridPane.rowIndex="0"
+        GridPane.halignment="CENTER"
+        GridPane.columnSpan="5">    
+        <image>
+            <Image url="@vocabulario.png" />
+        </image>
+    </ImageView>
+
+    <Label
+        fx:id="palabraLabelField" 
+        text="Palabra: "
+        GridPane.halignment="LEFT"
+        GridPane.columnIndex="0" 
+        GridPane.rowIndex="2"/>
+ 
+    <TextField 
+        fx:id="palabraNameField"
+        GridPane.columnIndex="1" 
+        GridPane.rowIndex="2"/>
+    
+    <Label 
+        text="Descripción: "
+        GridPane.halignment="RIGHT"
+        GridPane.columnIndex="2" 
+        GridPane.rowIndex="2"/>
+ 
+    <TextArea 
+        fx:id="palabraDescriptionField"
+        GridPane.columnIndex="3" 
+        GridPane.rowIndex="2"/>
+          
+    <Label 
+        text="Niveles: "   
+        GridPane.columnIndex="0" 
+        GridPane.rowIndex="3"/>
+    
+    <VBox 
+        spacing="0" 
+        alignment="center" 
+        GridPane.columnIndex="0"
+        GridPane.columnSpan="2" 
+        GridPane.rowIndex="4">
+        <ListView 
+            fx:id="listBoxMain"/>
+    </VBox>
+         
+    <Label 
+        text="Ruta del Recurso: "
+        GridPane.halignment="RIGHT"   
+        GridPane.columnIndex="2" 
+        GridPane.rowIndex="3"/>
+    
+    <Label 
+        fx:id="palabraImagenField"
+        GridPane.columnIndex="3" 
+        GridPane.rowIndex="3"/>            
+    
+    <ImageView 
+        id="boxImage"
+        fx:id="imagenPreview"
+        GridPane.columnIndex="2"
+        GridPane.columnSpan="2"
+        GridPane.halignment="CENTER"
+        GridPane.valignment="CENTER" 
+        GridPane.rowIndex="4">    
+    </ImageView>
+    
+    <Button 
+        text="Seleccionar Recurso"
+        fx:id="seleccionarImagenButton"
+        GridPane.columnIndex="2"
+        GridPane.rowIndex="5"
+        GridPane.columnSpan="2"
+        GridPane.halignment="CENTER"
+        onAction="#handleSeleccionarImagenButtonAction"/>
+
+    <Button 
+        text="Eliminar"
+        prefWidth="100"  
+        fx:id="eliminarButton"
+        onAction="#handleEliminarButtonAction"
+        GridPane.columnIndex="0"
+        GridPane.halignment="CENTER"
+        GridPane.rowIndex="6"/>
+     
+    <Button 
+        text="Guardar"
+        prefWidth="100"  
+        fx:id="createButton"
+        onAction="#handleGuardarButtonAction" 
+        GridPane.columnIndex="1"
+        GridPane.halignment="RIGHT"
+        GridPane.rowIndex="6"/>
+
+    <Button 
+        text="Volver"
+        prefWidth="100" 
+        fx:id="volverButtonCRUD"
+        onAction="#handleVolverButtonAction"    
+        GridPane.columnIndex="2"
+        GridPane.halignment="LEFT"
+        GridPane.rowIndex="6"/>    
+    
+    <stylesheets>
+        <URL value="@crud.css" />
+    </stylesheets>
+    
+</GridPane>
